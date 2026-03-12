@@ -46,7 +46,7 @@
     .container {
       max-width: 1240px;
       margin: 0 auto;
-      padding: 3.5rem 1.4rem 6rem;
+      padding: 3.5rem 1.4rem 8rem;
     }
 
     header.hero {
@@ -79,8 +79,8 @@
     }
 
     h1 {
-      font-size: clamp(2.6rem, 7vw, 5.2rem);          /* ← стало меньше */
-      font-weight: 700;                                 /* чуть легче */
+      font-size: clamp(2.6rem, 7vw, 5.2rem);
+      font-weight: 700;
       letter-spacing: -0.03em;
       line-height: 0.94;
       background: linear-gradient(90deg, #ff85a2, #d4a5ff, #ff85a2);
@@ -92,7 +92,7 @@
     }
 
     .subtitle {
-      font-size: clamp(1.05rem, 3.2vw, 1.35rem);      /* ← тоже меньше и легче */
+      font-size: clamp(1.05rem, 3.2vw, 1.35rem);
       margin: 2.4rem auto 3.5rem;
       max-width: 760px;
       opacity: 0.88;
@@ -246,11 +246,28 @@
 
     footer {
       text-align: center;
-      margin-top: 8rem;
-      padding: 3rem 0;
+      margin-top: 10rem;
+      padding: 4rem 0 3rem;
       color: var(--muted);
-      font-size: 1.05rem;
-      border-top: 1px solid rgba(255,255,255,0.07);
+      font-size: 0.92rem;
+      opacity: 0.85;
+      border-top: 1px solid rgba(255,255,255,0.09);
+    }
+
+    .credits {
+      margin-top: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .credits a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s ease, opacity 0.3s ease;
+    }
+
+    .credits a:hover {
+      color: var(--accent);
+      opacity: 1;
     }
 
     @keyframes titlePulse {
@@ -259,9 +276,8 @@
     }
 
     @media (max-width: 640px) {
-      .container { padding: 2.8rem 1rem 5rem; }
-      h1 { font-size: clamp(2.4rem, 9.5vw, 4.2rem); }
-      .countdown-item { min-width: 88px; padding: 1rem 1.2rem; }
+      .container { padding: 2.8rem 1rem 7rem; }
+      footer { font-size: 0.88rem; }
     }
   </style>
 </head>
@@ -332,13 +348,15 @@
   </main>
 
   <footer>
-    Пусть всё самое прекрасное всегда будет рядом с тобой 💫
+    <div class="credits">
+      made by fuji<br>
+      <a href="https://www.instagram.com/mardonov.714" target="_blank" rel="noopener noreferrer">@mardonov.714</a>
+    </div>
   </footer>
 
 </div>
 
 <script>
-// скрипт без изменений
 const birthday = new Date('2026-03-14T19:00:00+05:00');
 const els = {
   days: document.getElementById('days'),
